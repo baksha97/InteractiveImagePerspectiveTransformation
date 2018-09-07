@@ -15,6 +15,6 @@ I was unable to find a QUAD to QUAD image perception tranformation application s
 # End points
 I hope that this code can help someone else accomplish similiar tasks. Please continue to credit. I do know about using OpenCv's contouring and boundry boxes, but due to the fact that I was taking hundreds of photos, the shape of each page was too distorted and skewed to rely on computer vision.
 
-I continue to believe that taking photos of all the pages and creating this entire program has taken less time than it would have had I turned and scanned each individial page in the book. 
+I continue to believe that taking photos of all the pages and creating this entire program has taken less time than it would have had I turned and scanned each individial page in the book in a flatbed scanner. 
 
 ![Preview](https://i.gyazo.com/85a54b300d834bef5dd7c7f5c1e860f6.png)
