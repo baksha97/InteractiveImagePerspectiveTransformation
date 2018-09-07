@@ -13,3 +13,4 @@ def create_pdf_from_image_folder(folder_dir_with_type, out_name):
         pdf.add_page()
         pdf.image(image,  w=190)
     pdf.output(out_name, "F")
+    return True

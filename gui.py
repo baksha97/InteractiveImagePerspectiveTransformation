@@ -1,8 +1,9 @@
 import cv2
 import os
-from tkinter import Tk, Text, TOP, BOTH, X, N, LEFT, RAISED, Button, RIGHT, Listbox, END
+from tkinter import Tk, TOP, BOTH, X, LEFT, Button, Listbox, END, BOTTOM
 from tkinter.ttk import Frame, Label, Entry
 from selector import process_image
+from pdf import create_pdf_from_image_folder
 
 
 class PerspectiveTransformerGUI(Frame):
@@ -30,19 +31,29 @@ class PerspectiveTransformerGUI(Frame):
         self.output_entry = Entry(frame2)
         self.output_entry.pack(fill=X, padx=5, expand=True)
 
-        okButton = Button(self, text="START", width=25, padx=5, pady=5, command= self.run_on_image_paths)
-        okButton.pack(side=TOP)
+        start_button = Button(self, text="START", width=25, padx=5, pady=5, command= self.run_on_image_paths)
+        start_button.pack(side=TOP)
+
+        pdf_button = Button(self, text="MAKE A PDF FROM FIXED", width=25, padx=5, pady=5, command=self.create_pdf)
+        pdf_button.pack(side=BOTTOM)
 
         frame3 = Frame(self)
         frame3.pack(fill=BOTH, expand=True)
 
-        lb3 = Label(frame3, text="[C Key=Finish]\nFIXED ITEMS", width=15)
+        lb3 = Label(frame3, text="[C Key => Finish early] \n FIXED ITEMS/Dialog", width=50)
         lb3.pack(side=TOP, padx=5, pady=5)
 
         self.listbox = Listbox(frame3)
         self.listbox.pack(fill=BOTH)
 
-        self.listbox.insert(END, *list)
+    def create_pdf(self):
+        # ('Chapter12/*.png')
+        output_path = self.output_entry.get()
+        completed = create_pdf_from_image_folder('{}/*.png'.format(output_path), 'output.pdf')
+        completed_string = 'COMPLETED: {}'.format(completed)
+        print(completed_string)
+        self.listbox.insert(END, completed_string)
+        return
 
     def get_image_list(self):
         path = self.input_entry.get()
