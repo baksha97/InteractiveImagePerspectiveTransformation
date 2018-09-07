@@ -27,10 +27,13 @@ def __choose_points_for_image(image):
 
         # if the 'r' key is pressed, reset the cropping region
         if key == ord("r"):
+            print("r pressed")
             current_points = []
 
         # if the 'c' key is pressed, break from the loop
         elif key == ord("c"):
+            print("c pressed")
+            return False
             break
 
 
@@ -41,7 +44,9 @@ def __choose_points_for_image(image):
 
 def process_image(image):
     global current_points
-    __choose_points_for_image(image)
+    if __choose_points_for_image(image) is False:
+        print('canceled image')
+        return None
     img = cv2.imread(image)
     selected_points = np.float32(current_points)
     current_points = []
