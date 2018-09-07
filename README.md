@@ -17,4 +17,4 @@ I hope that this code can help someone else accomplish similiar tasks. Please co
 
 I continue to believe that taking photos of all the pages and creating this entire program has taken less time than it would have had I turned and scanned each individial page in the book. 
 
-https://i.gyazo.com/85a54b300d834bef5dd7c7f5c1e860f6.png
+![Preview](https://i.gyazo.com/85a54b300d834bef5dd7c7f5c1e860f6.png)
