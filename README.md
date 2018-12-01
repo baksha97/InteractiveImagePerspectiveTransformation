@@ -1,6 +1,6 @@
 # InteractiveImagePerspectiveTransformation
 
-I happened to about 300 photos with my phone of a book I needed to read. 
+I happened to take about 300 photos with my phone of a packet, from a professor, I needed to read. 
 After doing so, I wanted to use an application for perspective transformation and so I began searching for an application that would allow me to do so by selecting four corners of my quadrangle. 
 I was unable to find a manual QUAD to QUAD image perception tranformation application for sets of images so in turn...
 
